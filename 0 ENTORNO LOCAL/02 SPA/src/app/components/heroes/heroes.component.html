@@ -1,0 +1,23 @@
+<div class="content animated fadeIn">
+  <h1>Héroes <small>Marvel y DC</small></h1>
+
+  <div class="card-columns" >
+    <div class="card" *ngFor="let item of heroes; let i = index">
+      <img class="card-img-top" [src]=item.img [alt]=item.nombre [title]=item.nombre>
+      <div class="card-body">
+        <h4 class="card-title">{{item.nombre}}</h4>
+        <p class="card-text">{{item.bio}}</p>
+        <p class="card-text"><small class="text-muted">{{ item.aparicion }}</small></p>
+        <!-- Al evento click del botón le pasamos el indice del FOR -->
+        <button type="button" class="btn btn-outline-primary btn-block" name="button" (click) = "verHeroe(i)" >Ver más...</button>
+        <!-- Otra manera de hacerun botón-->
+        <!-- <a [routerLink] = "['/heroe', i]" class="btn btn-outline-primary">Ver más link ...</a> -->
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</div>
