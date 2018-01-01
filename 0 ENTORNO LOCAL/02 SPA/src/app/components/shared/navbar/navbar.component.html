@@ -22,7 +22,7 @@
       <!-- Ejecutar funcion cuando se presiona la tecla ENTER -->
       <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
 
-      <button class="btn btn-outline-primary" type="button" (click) = "buscarHeroe(buscarTexto.value)">Buscar</button>
+      <button class="btn btn-outline-primary" type="button" (click)="buscarHeroe(buscarTexto.value)">Buscar</button>
     </form>
   </div>
 </nav>
