@@ -69,6 +69,25 @@ export class HeroesService {
   getHeroe(idx:number){
     return this.heroes[idx];
   }
+
+  buscarHeroes (termino:string){
+    //Inicializamos array que guardará datos
+    let heroesArr:Heroe[] = [];
+    // pasamos a minuscular siempre
+    termino = termino.toLowerCase();
+
+    for (let item of this.heroes ){
+      let nombre = item.nombre.toLowerCase();
+      //indexOf para buscar string dentro del nombre. devuelve posicion
+      if (nombre.indexOf(termino) >= 0 ){
+        //añadimos fila a nuestro arraytemporal
+        heroesArr.push(item);
+      }
+    }
+    return heroesArr;
+  }
+
+
 }
 
 //Creamos interface para que todos los registros de heroes cumplan la misma estructura de campos

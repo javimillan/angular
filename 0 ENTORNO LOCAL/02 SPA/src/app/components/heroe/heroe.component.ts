@@ -17,7 +17,7 @@ export class HeroeComponent implements OnInit {
               ) {
                   this._activatedRoute.params.subscribe( params => {
                     console.log("PARAMS: " + params['id']);
-                    this.heroe = this._heroesService.getHeroe(params['id'];
+                    this.heroe = this._heroesService.getHeroe(params['id']);
                     console.log(this.heroe);
                   });
               }

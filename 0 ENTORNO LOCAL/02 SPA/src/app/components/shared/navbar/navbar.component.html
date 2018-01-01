@@ -19,8 +19,10 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary" type="submit">Search</button>
+      <!-- Ejecutar funcion cuando se presiona la tecla ENTER -->
+      <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+
+      <button class="btn btn-outline-primary" type="button" (click) = "buscarHeroe(buscarTexto.value)">Buscar</button>
     </form>
   </div>
 </nav>
