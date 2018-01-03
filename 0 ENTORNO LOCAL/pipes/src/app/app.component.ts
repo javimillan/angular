@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   nombre:string = "Javier";
-  arreglo[] = [1,2,3,4,5,6,7,8,9,10];
+  nombre2:string = "javiER MiLLan mOLina";
+  arreglo = [1,2,3,4,5,6,7,8,9,10];
   pi:number = Math.PI;
   a:string = '0.234';
   salario:number = 1234.5;
