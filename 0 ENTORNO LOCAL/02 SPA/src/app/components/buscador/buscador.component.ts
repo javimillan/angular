@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class BuscadorComponent implements OnInit {
 
   heroes:any[]=[];
+  termino:string;
 
   constructor(
       private _activatedRoute:ActivatedRoute,
@@ -24,6 +25,7 @@ export class BuscadorComponent implements OnInit {
     //leer termino y ejecutar funcion buscarHeroes
     this._activatedRoute.params.subscribe( params => {
       console.log("PARAMS: " + params['termino']);
+      this.termino = params['termino'];
       this.heroes = this._heroesService.buscarHeroes(params['termino']);
       console.log(this.heroes);
       });
