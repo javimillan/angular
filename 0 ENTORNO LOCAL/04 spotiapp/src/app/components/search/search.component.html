@@ -1,0 +1,17 @@
+<div class="container mt30">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="termino">Buscar</label>
+      <input type="text" placeholder="Buscar artista..." class="form-control" [(ngModel)] = "termino" (keyup) = "buscarArtista()">
+    </div>
+    <div class="col-md-9" *ngIf="termino">
+      <h1 class="text-capitalize">{{termino}}</h1>
+      <hr>
+    </div>
+    <ul>
+      <li *ngFor="let item of _spotify.artistas">
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
+</div>
