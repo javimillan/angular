@@ -11,6 +11,8 @@ export class AppComponent {
   pi:number = Math.PI;
   a:string = '0.234';
   salario:number = 1234.5;
+  video:string="y7OR9JyaIk8";
+  activar:boolean = true;
   heroe = {
     nombre:"Logan",
     apodo:"Wolverine",
