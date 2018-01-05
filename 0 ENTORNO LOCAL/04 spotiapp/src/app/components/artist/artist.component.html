@@ -1,3 +1,7 @@
-<p>
+<h1>
   {{cantante.name}}
-</p>
+</h1>
+<h2>TOP 10</h2>
+<ol>
+  <li *ngFor="let item of topTracks"><strong>{{item.name}}</strong><br><small>perteneciente al álbum</small> {{item.album.name}}</li>
+</ol>
