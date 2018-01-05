@@ -14,15 +14,14 @@ export class SearchComponent {
 
   buscarArtista(termino:string){
 
-  if (this.termino.length == 0) {
+    if (this.termino.length == 0) {
+      console.log("no hay termino");
       return;
+
+    }
+    this._spotify.getArtistas(this.termino)
+      .subscribe()
   }
-  this._spotify.getArtistas(this.termino)
-    .subscribe(artistas => {
-    console.log("Informacion lista!!");
-    console.log(artistas);
-  })
-}
 
 
 }

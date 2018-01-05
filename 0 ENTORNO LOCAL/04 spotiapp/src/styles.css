@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+/* body{
   background-color: black;
   color: white !important;
-}
+} */
 
 hr{
   border-color: white;
@@ -70,3 +70,5 @@ hr{
   animation-name: fadeIn;
 }
 .mt30{margin-top: 30px;}
+.mb30{margin-bottom: 30px}
+.card-body{background-color: lavender;}
