@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import 'rxjs/Rx';
+import 'rxjs/Rx'; // para los operadores map
+
 @Injectable()
 export class SpotifyService {
 
@@ -15,11 +16,11 @@ export class SpotifyService {
       let url = `https://api.spotify.com/v1/search?query=${termino}&type=artist&offset=0&limit=50`;
       //ATENCION: El token caduca cada hora
       let headers = new HttpHeaders({
-        'authorization': 'Bearer BQCrmLJ0yzunWYGdeqDzJK8i-iP3ehDF87uyFq0XhA6joeP_yRYCvOzBb7c2qg3IEPX7uP-MndBbNR39j6c'
+        'authorization': 'Bearer BQA6x9D4pO8GgTaf640Ql_IOqDY1rsPYQOooO3r-d1qeIkE2lWUmjtpjCUR4VOWR3IaMaUkykn1RAp05dWY'
       })
       return this.http.get(url, {headers})
                   .map((resp:any) => {
-                    this.artistas = resp.artists.items;
+                      this.artistas = resp.artists.items;
                       return this.artistas;
                   });
 
@@ -28,9 +29,9 @@ export class SpotifyService {
   getArtista(id:string){
     let url = `https://api.spotify.com/v1/artists/${id}`;
     let headers = new HttpHeaders({
-      'authorization': 'Bearer BQCrmLJ0yzunWYGdeqDzJK8i-iP3ehDF87uyFq0XhA6joeP_yRYCvOzBb7c2qg3IEPX7uP-MndBbNR39j6c'
+      'authorization': 'Bearer BQA6x9D4pO8GgTaf640Ql_IOqDY1rsPYQOooO3r-d1qeIkE2lWUmjtpjCUR4VOWR3IaMaUkykn1RAp05dWY'
     })
-    return this.http.get(url, {headers})
+    return this.http.get(url, {headers});
                 // .map((resp:any) => {
                 //   this.artista = resp;
                 //     return this.artista;
@@ -40,10 +41,10 @@ export class SpotifyService {
   getTop(id:string){
     let url = `https://api.spotify.com/v1/artists/${id}/top-tracks?country=ES`;
     let headers = new HttpHeaders({
-      'authorization': 'Bearer BQCrmLJ0yzunWYGdeqDzJK8i-iP3ehDF87uyFq0XhA6joeP_yRYCvOzBb7c2qg3IEPX7uP-MndBbNR39j6c'
+      'authorization': 'Bearer BQA6x9D4pO8GgTaf640Ql_IOqDY1rsPYQOooO3r-d1qeIkE2lWUmjtpjCUR4VOWR3IaMaUkykn1RAp05dWY'
     })
     return this.http.get(url, {headers});
-            
+
 
   }
 

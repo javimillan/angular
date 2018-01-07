@@ -2,7 +2,7 @@
 
     <div class="col-md-3 mb30">
       <label for="termino">Buscar</label>
-      <input type="text" placeholder="Buscar artista..." class="form-control" [(ngModel)] = "termino" (keyup) = "buscarArtista()">
+      <input type="text" placeholder="Buscar artista..." class="form-control" [(ngModel)]="termino" (keyup)="buscarArtista()">
     </div>
 
     <!-- <div class="col-md-9" *ngIf="termino">
@@ -21,7 +21,7 @@
 
 
 
-<div class="col-md-12" *ngIf="termino">
+<div class="col-md-12" *ngIf="termino.length > 1">
   <h1 class="text-capitalize">{{termino}}</h1>
   <div class="card-columns">
     <div class="card puntero" *ngFor="let item of _spotify.artistas" [routerLink] = "['/artist', item.id]">
