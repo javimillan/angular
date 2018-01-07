@@ -9,13 +9,15 @@ import { app_routing } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { WeatherService } from './services/weather.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

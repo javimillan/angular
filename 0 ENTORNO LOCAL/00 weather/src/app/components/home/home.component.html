@@ -1,7 +1,13 @@
 
 <div class="col-md-3 mb30">
   <label for="ciudad">Buscar</label>
-  <input type="text" placeholder="Buscar ciudad..." class="form-control"  (keyup)="buscarCiudad()" [(ngModel)]="ciudad" />
+  <input type="search" placeholder="Buscar ciudad..." class="form-control"  (keyup)="buscarCiudad()" [(ngModel)]="ciudad" />
+  <!-- <input #txtFname placeholder="Buscar ciudad..." />
+  <tr *ngFor="let item of respuesta.nombre | searchfilter: 'name' : txtFname.value">
+    <td>
+        {{item.name}}
+    </td>
+  </tr> -->
 </div>
 
 <div class="col-md-12" *ngIf="ciudad.length > 1">

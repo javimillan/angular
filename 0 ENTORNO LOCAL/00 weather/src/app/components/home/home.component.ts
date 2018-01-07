@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WeatherService } from '../../services/weather.service';
+import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html'
@@ -13,11 +14,12 @@ export class HomeComponent implements OnInit {
   }
 
   localizacion:any[] = [];
+  // respuesta:string = "";
   nombre:string = "";
   temperatura:string = "";
   temperatura_max:string = "";
   temperatura_min:string = "";
-
+  ciudad:string = "";
   ngOnInit() {
 
 
@@ -32,6 +34,7 @@ export class HomeComponent implements OnInit {
     // console.log(this._weather.localizacion.country_name);
 
     // Declaracion variables
+    this.respuesta = this._weather.nombre;
     this.temperatura = this._weather.temp;
     this.nombre = this._weather.nombre;
 

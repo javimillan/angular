@@ -1,7 +1,37 @@
-<h1>
-  {{artista.name}}
-</h1>
-<h2>TOP 10</h2>
-<ol>
-  <li *ngFor="let item of pistas"><strong>{{item.name}}</strong><br><small>perteneciente al álbum</small> {{item.album.name}}</li>
-</ol>
+<div class="container mt30">
+  <div class="row">
+    <div class="col-md-3">
+
+      <img [src]="artista.images | sinfoto" class="card-img-top" alt="{{artista.name}}" title="{{artista.name}}">
+    </div>
+    <div class="col-md-9">
+      <h1 class="text-center">
+        {{artista.name}}
+      </h1>
+      <a [routerLink] = "['/search']">Regresar</a>
+      <a [href]="[artista.external_urls.spotify]" target="_blank">Ver en Spotify</a>
+
+
+    </div>
+
+  </div>
+  <div class="row">
+  <div class="col-md-12">
+
+    <h2>TOP 10</h2>
+    <div class="row" *ngFor="let item of pistas">
+      <div class="col-md-2">
+        <img [src]="item.album.images | sinfoto" class="card-img-top" alt="{{item.name}}" title="{{item.name}}">
+
+      </div>
+      <div class="col-md-10">
+        {{item.name}}
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+
+
+</div>

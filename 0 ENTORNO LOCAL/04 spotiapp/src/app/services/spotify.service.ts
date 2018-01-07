@@ -16,7 +16,7 @@ export class SpotifyService {
       let url = `https://api.spotify.com/v1/search?query=${termino}&type=artist&offset=0&limit=50`;
       //ATENCION: El token caduca cada hora
       let headers = new HttpHeaders({
-        'authorization': 'Bearer BQA6x9D4pO8GgTaf640Ql_IOqDY1rsPYQOooO3r-d1qeIkE2lWUmjtpjCUR4VOWR3IaMaUkykn1RAp05dWY'
+        'authorization': 'Bearer BQDz08wxL3ZhZASIAN6R_Shf9SagX2oH4jiIyZHi96nFw4Btpev5F3zeI8q2uoNNDtGeUNlpHb3qz08e9So'
       })
       return this.http.get(url, {headers})
                   .map((resp:any) => {
@@ -29,7 +29,7 @@ export class SpotifyService {
   getArtista(id:string){
     let url = `https://api.spotify.com/v1/artists/${id}`;
     let headers = new HttpHeaders({
-      'authorization': 'Bearer BQA6x9D4pO8GgTaf640Ql_IOqDY1rsPYQOooO3r-d1qeIkE2lWUmjtpjCUR4VOWR3IaMaUkykn1RAp05dWY'
+      'authorization': 'Bearer BQDz08wxL3ZhZASIAN6R_Shf9SagX2oH4jiIyZHi96nFw4Btpev5F3zeI8q2uoNNDtGeUNlpHb3qz08e9So'
     })
     return this.http.get(url, {headers});
                 // .map((resp:any) => {
@@ -41,7 +41,7 @@ export class SpotifyService {
   getTop(id:string){
     let url = `https://api.spotify.com/v1/artists/${id}/top-tracks?country=ES`;
     let headers = new HttpHeaders({
-      'authorization': 'Bearer BQA6x9D4pO8GgTaf640Ql_IOqDY1rsPYQOooO3r-d1qeIkE2lWUmjtpjCUR4VOWR3IaMaUkykn1RAp05dWY'
+      'authorization': 'Bearer BQDz08wxL3ZhZASIAN6R_Shf9SagX2oH4jiIyZHi96nFw4Btpev5F3zeI8q2uoNNDtGeUNlpHb3qz08e9So'
     })
     return this.http.get(url, {headers});
 
