@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WeatherService } from '../../services/weather.service';
-import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
+import { WeatherService } from '../../app/services/weather.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html'
@@ -41,11 +41,6 @@ export class HomeComponent implements OnInit {
     this.temperatura_max = this._weather.respuestaForecast.celsius;
     // this.temperatura_min = this._weather.nombre;
 
-
-    if (this.ciudad.length == 0) {
-      console.log("no hay ciudad");
-      return;
-    }
 
     this._weather.getTiempo(this.ciudad);
     this._weather.getTiempoForecast(this.ciudad);
