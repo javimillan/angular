@@ -11,11 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { app_routing } from './app.routes';
-import { ArtistComponent } from './components/artist/artist.component';
-
-// pipes
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
-import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { ArtistComponent } from './components/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +21,6 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     SearchComponent,
     NavbarComponent,
     SinfotoPipe,
-    DomseguroPipe,
     ArtistComponent
   ],
   imports: [

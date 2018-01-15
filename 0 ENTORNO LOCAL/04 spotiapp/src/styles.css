@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-  background-color: #32383e;
+/* body{
+  background-color: black;
   color: white !important;
-}
+} */
 
 hr{
   border-color: white;
@@ -72,5 +72,3 @@ hr{
 .mt30{margin-top: 30px;}
 .mb30{margin-bottom: 30px}
 .card-body{background-color: lavender;}
-.circular{border-radius: 50%;}
-.img50{width: 50px;}
