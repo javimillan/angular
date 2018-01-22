@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Localización</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="text-center temp">{{temp}}ºC</div>
+  <div class="text-center">{{tempMax}}ºC / {{tempMin}}ºC</div>
+
+  {{lastHourSplit}}<hr>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+   <ion-refresher-content>
+kkkkkk
+   </ion-refresher-content>
+ </ion-refresher>
+
+
+</ion-content>

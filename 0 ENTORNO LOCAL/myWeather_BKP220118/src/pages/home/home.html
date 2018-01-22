@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Localización</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="text-center temp">{{temp}}ºC</div>
+  <div class="text-center">{{tempMax}}ºC / {{tempMin}}ºC</div>
+  <div class="flex boxA">
+    <div class="resumIcon">X</div>
+    <div class="resum"><div>{{city}}</div>
+      <div>{{dateDay}}/{{dateMonth}}/{{dateYear}}</div>
+      <div>{{lastHourSplit}}</div>
+    </div>
+  </div>
+  <div class="flex boxB">
+    <div class="detailBox" *ngFor="let item of detailsArray">
+      <img [src]="item.url">
+      <div class="detail">{{item.name}}</div>
+      <div class="cetalData">{{item.value}}</div>
+    </div>
+  </div>
+  <!-- <div class="flex boxC">
+    <div class="detailBox" *ngFor="let item of forecastArray">
+      <div class="forecastDay"></div>
+      <img [src]="item.url" alt="{{item.name}}">
+      <div class="forecasData">XX</div>
+    </div>
+  </div> -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+   <ion-refresher-content>
+   </ion-refresher-content>
+ </ion-refresher>
+
+
+</ion-content>
