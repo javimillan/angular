@@ -64,7 +64,6 @@ export class HomePage implements OnInit{
             this.lastHourSplit = this.lastHour.split(" ")[4];
             this.city = resp.current_observation.display_location.city;
             this.dateDay = resp.forecast.simpleforecast.forecastday["0"].date.day;
-
             this.dateMonth = resp.forecast.simpleforecast.forecastday["0"].date.month;
             if(this.dateMonth < 10){
               this.dateMonth = "0" + this.dateMonth;
@@ -91,24 +90,16 @@ export class HomePage implements OnInit{
     dateYear:any;
     detailsArray:any[];
     datos:any;
-
-
-
-
-  //
+  
   doRefresh(refresher) {
      console.log('Begin async operation', refresher);
      console.log('recargando datos');
      this.getPos();
-
-
      setTimeout(() => {
        console.log('Async operation has ended');
        refresher.complete();
      }, 2000);
    }
-
-
 
 
 }
