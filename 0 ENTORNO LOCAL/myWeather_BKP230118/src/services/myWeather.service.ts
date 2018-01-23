@@ -20,7 +20,27 @@ export class myWeatherService implements OnInit{
   icons:any[] = [
     {
       name:"moon",
-      url:"http://www.jmillan.com/projects/myWeather/images/023-moon.png"
+      url:"./assets/icon/004-moon.png"
+    },
+    {
+      name:"viento",
+      url:"./assets/icon/013-wind.png"
+    },
+    {
+      name:"humedad",
+      url:"./assets/icon/014-drop.png"
+    },
+    {
+      name:"sol",
+      url:"./assets/icon/016-sun.png"
+    },
+    {
+      name:"sol",
+      url:"./assets/icon/011-cloudy.png"
+    },
+    {
+      name:"senTermica",
+      url:"./assets/icon/003-temperature.png"
     }
   ];
 

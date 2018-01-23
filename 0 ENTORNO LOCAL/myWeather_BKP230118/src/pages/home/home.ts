@@ -17,12 +17,15 @@ export class HomePage implements OnInit{
     console.log("_myWeather");
     console.log(this._myWeather);
     // icons
-    this.moon = this._myWeather.icons[0].url;
+    this.ic_moon = this._myWeather.icons[0].url;
+    this.ic_viento = this._myWeather.icons[1].url;
+    this.ic_humedad = this._myWeather.icons[2].url;
+    this.ic_sol = this._myWeather.icons[3].url;
+    this.ic_nube = this._myWeather.icons[4].url;
+    this.ic_termica = this._myWeather.icons[5].url;
 
 
 
-
-    console.log(this.humedad);
   } // cierre CONSTRUCTOR
 
     ngOnInit() {
@@ -80,17 +83,17 @@ export class HomePage implements OnInit{
             this.detailsArray = [
               {
                 name:"Humedad",
-                url:this.moon,
+                url:this.ic_humedad,
                 value:this.humedad
               },
               {
                 name:"Viento",
-                url:this.moon,
+                url:this.ic_viento,
                 value:this.viento
               },
               {
                 name:"S. térmica",
-                url:this.moon,
+                url:this.ic_termica,
                 value:this.sTermica
               }
             ];
@@ -98,19 +101,19 @@ export class HomePage implements OnInit{
             this.forecastArray = [
               {
                 day:this.tomorrow,
-                icon:this.moon,
+                icon:this.ic_sol,
                 valueMax:this.tomorrowMax,
                 valueMin:this.tomorrowMin
               },
               {
                 day:this.past_tomorrow,
-                icon:this.moon,
+                icon:this.ic_sol,
                 valueMax:this.past_tomorrowMax,
                 valueMin:this.past_tomorrowMin
               },
               {
                 day:this.past_past_tomorrow,
-                icon:this.moon,
+                icon:this.ic_nube,
                 valueMax:this.past_past_tomorrowMax,
                 valueMin:this.past_past_tomorrowMin
               }
@@ -139,9 +142,14 @@ export class HomePage implements OnInit{
     detailsArray:any[];
     forecastArray:any[];
     datos:any;
-    moon:any;
+    ic_moon:any;
     humedad:any;
+    ic_humedad:any;
+    ic_sol:any;
+    ic_nube:any;
+    ic_termica:any;
     viento:any;
+    ic_viento:any;
     sTermica:any;
     tomorrow:any;
     past_tomorrow:any;

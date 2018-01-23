@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { AgregarComponent} from '../agregar/agregar.component';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -36,9 +36,15 @@ export class AboutPage {
         tempMax:"22",
         tempMin:"3",
         status:"rain"
-      }
+      },
+
+
     ];
 
+  }
+
+  irAgregar(){
+    this.navCtrl.push(AgregarComponent);
   }
 
 }

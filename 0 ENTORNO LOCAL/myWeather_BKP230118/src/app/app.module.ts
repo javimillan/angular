@@ -13,14 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { AgregarComponent } from '../pages/agregar/agregar.component';
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AgregarComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AgregarComponent
   ],
   providers: [
     Geolocation,
