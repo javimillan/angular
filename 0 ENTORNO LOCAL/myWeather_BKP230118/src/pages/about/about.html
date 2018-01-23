@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mis Ubicaciones
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+
+  <ion-card>
+    <img src="http://www.jmillan.com/projects/myWeather/images/night1.jpg"/>
+    <div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="http://www.jmillan.com/projects/myWeather/images/night1.jpg"/>
+    <div class="card-title">Amsterdam</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="http://www.jmillan.com/projects/myWeather/images/night1.jpg"/>
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="http://www.jmillan.com/projects/myWeather/images/night1.jpg"/>
+    <div class="card-title">Madison</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
+
+
+  <div class="ubicacionContent flex">
+    <div class="ubicacion" *ngFor="let item of ubicacionesArray">
+      <div class="ubicacionBox {{item.status}}">
+        <div class="title">{{item.name}}</div>
+        <div class="info">
+          <div class="temp text-right">{{item.temp}} ºC</div>
+          <div class="tempMax text-right">{{item.tempMax}} ºC</div>
+          <div class="tempMin text-right"><span class="grey">{{item.tempMin}} ºC</span></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-fab right bottom>
+     <button ion-fab color="primary">
+       <ion-icon ios="ios-add" md="md-add"></ion-icon>
+
+
+     </button>
+   </ion-fab>
+
+</ion-content>
