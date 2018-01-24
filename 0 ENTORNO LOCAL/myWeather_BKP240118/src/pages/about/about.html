@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mis Ubicaciones
+    </ion-title>
+    <!-- <button color="primary" (click)="irAgregar()"> -->
+      <ion-icon ios="ios-add" md="md-add" (click)="irAgregar()" ></ion-icon>
+    <!-- </button> -->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <div class="ubicacionContent flex">
+    <div class="ubicacion" *ngFor="let item of ubicacionesArray">
+      <div class="ubicacionBox {{item.status}}">
+        <div class="title">{{item.name}}</div>
+        <div class="info">
+          <div class="temp text-right">{{item.temp}} ºC</div>
+          <div class="tempMax text-right">{{item.tempMax}} ºC</div>
+          <div class="tempMin text-right"><span class="grey">{{item.tempMin}} ºC</span></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>

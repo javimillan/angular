@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Añadir Ubicación</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Ciudad o población</ion-label>
+      <ion-input type="text" (keyup)="consultaData();" [(ngModel)]="city"></ion-input>
+    </ion-item>
+    <div class="grey" [innerHtml]="dataResult"></div>
+  </ion-list>
+</ion-content>
