@@ -9,6 +9,17 @@
       <ion-label floating>Ciudad o población</ion-label>
       <ion-input type="text" (keyup)="consultaData();" [(ngModel)]="city"></ion-input>
     </ion-item>
-    <div class="grey" [innerHtml]="dataResult"></div>
+    <div class="grey text-center" [innerHtml]="dataResult"></div>
+    <ul *ngIf="results">
+      <li *ngFor="let item of results" class="grey" >
+        <a (click)="selectResults(item);" class="grey">{{item.city}}, {{item.country_name}}</a>
+      </li>
+    </ul>
+    <ul *ngIf="result">
+      <li class="grey" >
+        <a (click)="selectResult(result);" class="grey">{{result}}</a>
+      </li>
+    </ul>
   </ion-list>
+  <button ion-button block [disabled]="agregar == 0">Añadir</button>
 </ion-content>
