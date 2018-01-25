@@ -58,11 +58,11 @@ super-tabs-container[ng-reflect-selected-tab-index="1"] ion-navbar ion-icon{disp
 .boxC .detailBox div.grey{line-height: 12px;}
 /* MIs Ubicaciones */
 
-// #tabpanel-t0-1 .toolbar-background-md{background-color: #333;}
-// #tabpanel-t0-1 .temp{font-size: 30px;}
-// #tabpanel-t0-1 ion-title{display: inline-block;vertical-align: middle;}
-// #tabpanel-t0-1 ion-navbar ion-icon{display: inline-block;vertical-align: middle;float: right;font-size: 25px; padding: 0 20px;}
-
+.addBtn{width: 50%; margin: 20px auto;display: block;}
+.listItems{list-style: none;padding: 0}
+.listItems li{background-color: #0a4b74; padding: 15px 0; text-align: center; margin: 0 auto; border-bottom: 1px solid #999;}
+.listItems li:first-child{border-top: 1px solid #999;}
+.listItems li a{color: #fff;}
 .ubicacionContent{display: flex;flex-direction: column;min-height: 100%;}
 .ubicacionContent .ubicacion{min-height: 145px;flex:1;display: flex; justify-content: center; flex-direction: column;}
 .ubicacionContent .ubicacion .ubicacionBox{position: relative;flex: 1;padding: 20px;background-size: cover;background-position: center 35%; background-repeat: no-repeat;}

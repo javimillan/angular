@@ -1,27 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { HomePage} from '../home/home';
+import { AboutPage} from '../about/about';
 import { HttpClient } from '@angular/common/http';
 import { myWeatherService } from '../../services/myWeather.service';
+import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'app-agregar',
   templateUrl: 'agregar.component.html',
 })
 export class AgregarComponent implements OnInit {
-  constructor(public _http:HttpClient, public _myWeather: myWeatherService) {  }
+  constructor(public _http:HttpClient, public _myWeather: myWeatherService, public navCtrl: NavController) {  }
 
   city:any;
+  cityShort:any;
   key:any = this._myWeather.key;
   dataResult:any = "";
   results:any[];
+  resultsCity:any;
   agregar:any = 0;
   result:any;
+  resultFull:any;
   zmw:any;
   temp:any;
 
 
   ngOnInit() {}
 
+  agregarItem(){
+    if(this.resultsCity){
+      console.log("resultS from cities")
+      console.log(this.resultsCity)
+    }
+    else{
+      console.log("result city")
+      console.log(this.resultCity)
+    }
+    this.navCtrl.push(AboutPage);
+
+
+  }
+
+  // mas de 1 resultado
   selectResults(item){
     console.log("Ciudad seleccionada: " + item.city + ", " + item.country_name);
     console.log("Temperatura: " + item.city + ", " + item.country_name);
@@ -37,31 +57,45 @@ export class AgregarComponent implements OnInit {
     this._http.get(url)
     .subscribe((resp:any) => {
       console.log(resp);
-      // this.results = resp.response.results;
+      // variables necesarias para mostrar en listado
+      this.resultsCity = resp.current_observation.display_location.city;
+
+
+
+
     });
 
   }
+
+  //1 resultado
   selectResult(item){
     console.log("Ciudad seleccionada: " + this.result);
     console.log("Temperatura: " + this.temp);
     //Imprimimos valor en el input
-    this.city = this.result;
+    this.city = this.resultFull;
+    this.cityShort = this.result;
     // limpiamos lista de resultados
     this.dataResult = "";
     this.results = [];
     this.result = "";
     this.agregar = 1;
+    let url:any = `http://api.wunderground.com/api/${this.key}/forecast/geolookup/conditions/q/${this.cityShort}.json`;
+    this._http.get(url)
+    .subscribe((resp:any) => {
+      console.log(resp);
+      // variables necesarias para mostrar en listado
+      this.resultCity = resp.current_observation.display_location.city;
+
+
+
+
+    });
   }
+
+  // consulta mientras escribimos en buscador
   consultaData(){
-    console.log("1111");
     this.agregar = 0;
-
-      let url:any = `http://api.wunderground.com/api/${this.key}/forecast/geolookup/conditions/q/${this.city}.json`;
-
-    // obtenemos URL desde ZMW en caso de existir varios resultados
-    // para evitar confusiones con varios resultados utilizamos el ZMW
-    // http://api.wunderground.com/api/e276774f8069a33e/forecast/q/zmw:31003.1.99999.json
-
+    let url:any = `http://api.wunderground.com/api/${this.key}/forecast/geolookup/conditions/q/${this.city}.json`;
     console.log("url")
     console.log(url)
     console.log(this._http.get(url))
@@ -69,30 +103,32 @@ export class AgregarComponent implements OnInit {
     .subscribe((resp:any) => {
       console.log(resp);
       this.results = resp.response.results;
-      // -------- mas de 1 resultado
+      // -------- mas de 1 resultado -------------------------------------------
       if (this.results != undefined){
         console.log(this.results.length);
-        this.dataResult = "- Selecciona una de las coincidencias -";
-        // this.temp = resp.current_observation.temp_c;
+        // this.dataResult = "- Selecciona una de las coincidencias -";
         this.results.forEach(function (name) {
           console.log(name);
           console.log(name.city + ", " + name.country);
           console.log("ZMW");
           console.log(name.zmw);
         });
+        this.result = "";
       }
       else{
-          // --------- 1 resultado
+          // --------- 1 resultado ---------------------------------------------
           if(resp.current_observation != undefined){
             console.log(resp.current_observation.display_location.city);
             this.result = resp.current_observation.display_location.city;
+            this.resultFull = resp.current_observation.display_location.full;
             this.temp = resp.current_observation.temp_c;
             console.log(this.temp)
+            this.results = [];
           }
-          // -------- no hay resultados
+          // -------- no hay resultados ----------------------------------------
           else{
             console.log("ERROR");
-            this.dataResult = "- No existen coincidencias -";
+            // this.dataResult = "- No existen coincidencias -";
           }
       }
     });

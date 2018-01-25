@@ -1,0 +1,8 @@
+{
+  "name": "myWeather",
+  "app_id": "a3aea050",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

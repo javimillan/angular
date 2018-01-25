@@ -36,9 +36,7 @@ export class AboutPage {
         tempMax:"22",
         tempMin:"3",
         status:"rain"
-      },
-
-
+      }
     ];
 
   }
