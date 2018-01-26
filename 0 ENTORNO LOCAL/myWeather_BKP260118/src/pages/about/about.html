@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mis Ubicaciones
+    </ion-title>
+      <ion-icon ios="ios-add" md="md-add" (click)="irAgregar()" ></ion-icon>
+      <ion-icon  ios="ios-trash" md="md-trash" [ngClass]="{red: _dataService.delete == true}" (click)="_dataService.checkListaLength()"></ion-icon>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="ubicacionContent flex">
+    <div class="ubicacion" *ngFor="let item of ubicacionesArray; let i = index">
+      <div class="ubicacionBox" [ngClass]="{
+        snow:           item[4] == 'Snow',
+        clear:          item[4] == 'Clear',
+        overcast:       item[4] == 'Overcast',
+        partlycloudy:   item[4] == 'Partly Cloudy',
+        rain:           item[4] == 'Rain'
+
+      }">
+        <div class="title">{{item[0]}}</div>
+        <div class="info">
+          <div class="temp text-right">{{item[1]}}</div>
+          <img class="iconConditions" src="./assets/icon/016-sun.png" alt="">
+          <div class="detailstemp">
+            <div class="tempMax text-right">{{item[2]}}</div>
+            <div class="tempMin text-right"><span class="grey">{{item[3]}}</span></div>
+          </div>
+        </div>
+        <ion-icon *ngIf="_dataService.delete" ios="ios-trash" md="md-trash" (click)="_dataService.borrarItem(i)"></ion-icon>
+      </div>
+    </div>
+  </div>
+  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+   <ion-refresher-content>
+   </ion-refresher-content>
+ </ion-refresher>
+
+</ion-content>

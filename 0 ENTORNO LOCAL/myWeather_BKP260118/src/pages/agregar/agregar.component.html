@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar hideBackButton >
+    <ion-title>Añadir Ubicación</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Ciudad o población</ion-label>
+      <ion-input type="text" (keyup)="consultaData();" [(ngModel)]="city"></ion-input>
+    </ion-item>
+    <div class="white text-center" [innerHtml]="dataResult"></div>
+    <ul *ngIf="results" class="listItems">
+      <li *ngFor="let item of results" >
+        <a (click)="selectResults(item);" class="white">{{item.city}}, {{item.country_name}}</a>
+      </li>
+    </ul>
+    <ul *ngIf="result" class="listItems">
+      <li >
+        <a (click)="selectResult(result);" class="white">{{resultFull}}</a>
+      </li>
+    </ul>
+  </ion-list>
+  <button ion-button [disabled]="agregar == 0" class="addBtn" (click)="agregarItem();">Añadir</button>
+
+
+</ion-content>
